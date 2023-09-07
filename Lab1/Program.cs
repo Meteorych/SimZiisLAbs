@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using LiveCharts;
-
-using LiveCharts.Wpf;
+using Lab1AOIS;
 
 namespace Lab1
 {
@@ -19,16 +18,8 @@ namespace Lab1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-            CartesianChart cartesianChart1 = new CartesianChart();
-            cartesianChart1.Series = new SeriesCollection
-            {
-                new ColumnSeries
-                {
-                    Title = "Frequencies",
-                    Values = new ChartValues<int> { 10, 15, 7, 22, 18 }, // Replace with your frequency data
-                }
-            };
+            Application.Run(new MainForm());
+           
         }
     }
 }
