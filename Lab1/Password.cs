@@ -10,6 +10,7 @@ namespace Lab1AOIS
     internal class Password
     {
         private string _password;
+        private string[] _passwords = new string[5];
         private int _length;
         private const string _valid = "абвгдеёжзийклмнпрстоуфхцчщшъыьэюя0123456789";
         public Password(int length)
@@ -35,16 +36,21 @@ namespace Lab1AOIS
         }
 
         public string GetPassword { get { return _password; } }
-
+        public string[] GetPasswords { get { return _passwords; } }
+        /// <summary>
+        /// Calculating brutforce's time
+        /// </summary>
+        /// <returns></returns>
         public long BrutForceTime()
         {
             Stopwatch sw = new Stopwatch();
             sw.Start();
             
-            for(int i = 0; i <= 5; i++)
+            for(int i = 0; i < 5; i++)
             {
                 BrutForce();
-                _password = BuildPassword();
+                _passwords[i] = _password;
+                _password = new Password(_length).GetPassword;
             }
             
             sw.Stop();

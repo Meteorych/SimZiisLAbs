@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Lab1
 {
@@ -29,34 +30,32 @@ namespace Lab1
             try
             {
                 int length = int.Parse(textBoxLength.Lines[1]);
-
                 //Generate the password
                 Password password = new Password(length);
-
                 //Display the generated password
-                DisplayPasswordDistribution(password.GetPassword);
                 textBoxOutput.Text = $"Generated password: {password.GetPassword}{Environment.NewLine}Average time of brutforce:{password.BrutForceTime()} ms";
-                
+                DisplayPasswordDistribution(password.GetPasswords);
             }
             catch (FormatException)
             {
                 textBoxOutput.AppendText("\nPlease enter a valid numeric length.");
             }
         }
-        private void DisplayPasswordDistribution(string password)
+        private void DisplayPasswordDistribution(string[] passwords)
         {
-            SeriesCollection seriesCollection = new SeriesCollection();
-
-            foreach (char c in password)
-            {
-                int count = password.Count(ch => ch == c);
-                seriesCollection.Add(new ColumnSeries
+            LiveCharts.SeriesCollection seriesCollection = new LiveCharts.SeriesCollection();
+            foreach (string password in passwords) 
+            { 
+                foreach (char c in password)
                 {
-                    Title = c.ToString(),
-                    Values = new ChartValues<int> { count }
-                });
+                    int count = password.Count(ch => ch == c);
+                    seriesCollection.Add(new ColumnSeries
+                    {
+                        Title = c.ToString(),
+                        Values = new ChartValues<int> { count }
+                    });
+                }
             }
-
             cartesianChart1.Series = seriesCollection;
         }
     }

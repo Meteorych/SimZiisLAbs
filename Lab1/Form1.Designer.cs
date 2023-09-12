@@ -33,6 +33,7 @@
             this.textBoxOutput = new System.Windows.Forms.TextBox();
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.cartesianChart1 = new LiveCharts.Wpf.CartesianChart();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -63,18 +64,28 @@
             // 
             // elementHost1
             // 
-            this.elementHost1.Location = new System.Drawing.Point(195, 195);
+            this.elementHost1.Location = new System.Drawing.Point(125, 180);
             this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(373, 232);
+            this.elementHost1.Size = new System.Drawing.Size(544, 232);
             this.elementHost1.TabIndex = 4;
             this.elementHost1.Text = "elementHost1";
             this.elementHost1.Child = this.cartesianChart1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(122, 396);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(268, 16);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Chart of frequency distribution (5 passwords)";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.elementHost1);
             this.Controls.Add(this.textBoxOutput);
             this.Controls.Add(this.textBoxLength);
@@ -92,6 +103,7 @@
         private System.Windows.Forms.TextBox textBoxOutput;
         private System.Windows.Forms.Integration.ElementHost elementHost1;
         private LiveCharts.Wpf.CartesianChart cartesianChart1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
