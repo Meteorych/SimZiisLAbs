@@ -16,7 +16,7 @@ def generate_keyword():
 
 
 def making_cipher(keyword: str):
-    begin_word = input("Input word, that you want to cipher: ")
+    begin_word = input("Input word that you want to cipher: ")
     f = lambda arg: alphabet[(alphabet.index(arg[0]) + alphabet.index(arg[1]) % 26) % 26]
     cipher_word = ''.join(map(f, zip(begin_word, cycle(keyword))))
     print(f"\nCipher word: {cipher_word}")

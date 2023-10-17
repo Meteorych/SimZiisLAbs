@@ -18,3 +18,4 @@ C:\CSharp and DotNet\AOISLAbs\Lab1\obj\Debug\Lab1.csproj.CoreCompileInputs.cache
 C:\CSharp and DotNet\AOISLAbs\Lab1\obj\Debug\Lab1.csproj.CopyComplete
 C:\CSharp and DotNet\AOISLAbs\Lab1\obj\Debug\Lab1.exe
 C:\CSharp and DotNet\AOISLAbs\Lab1\obj\Debug\Lab1.pdb
+C:\CSharp and DotNet\AOISLAbs\Lab1\obj\Debug\Lab1.MainForm.resources
